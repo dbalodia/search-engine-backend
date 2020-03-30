@@ -10,7 +10,7 @@
     "license": "MIT",
     "scripts": {
         "start": "npm run serve",
-        "build": "npm run build-sass && npm run build-ts && npm run lint && npm run copy-static-assets",
+        "build": "npm run build-ts && npm run lint && npm run copy-static-assets",
         "serve": "node dist/server.js",
         "watch-node": "nodemon dist/server.js",
         "watch": "concurrently -k -p \"[{name}]\" -n \"Sass,TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-sass\" \"npm run watch-ts\" \"npm run watch-node\"",
@@ -24,7 +24,7 @@
         "copy-static-assets": "ts-node copyStaticAssets.ts",
         "debug": "npm run build && npm run watch-debug",
         "serve-debug": "nodemon --inspect dist/server.js",
-        "watch-debug": "concurrently -k -p \"[{name}]\" -n \"Sass,TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-sass\" \"npm run watch-ts\" \"npm run serve-debug\""
+        "watch-debug": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run serve-debug\""
     },
     "dependencies": {
         "async": "^3.1.0",
@@ -33,6 +33,7 @@
         "body-parser": "^1.19.0",
         "compression": "^1.7.4",
         "connect-mongo": "^3.0.0",
+        "cors": "^2.8.5",
         "dotenv": "^8.2.0",
         "errorhandler": "^1.5.1",
         "express": "^4.17.1",
@@ -59,6 +60,7 @@
         "@types/compression": "^1.0.1",
         "@types/concurrently": "^4.1.0",
         "@types/connect-mongo": "^3.0.0",
+        "@types/cors": "^2.8.6",
         "@types/errorhandler": "^0.0.32",
         "@types/eslint": "^6.1.1",
         "@types/express": "^4.17.1",
